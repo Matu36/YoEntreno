@@ -17,14 +17,7 @@ module.exports = (sequelize) => {
         },
         onDelete: "CASCADE",
       },
-      metodoId: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "MetodosEntrenamiento",
-          key: "id",
-        },
-        onDelete: "CASCADE",
-      },
+
       series: {
         type: DataTypes.INTEGER,
         allowNull: false,

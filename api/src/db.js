@@ -5,7 +5,7 @@ const path = require("path");
 const { DB_URL, DATABASE_URL } = process.env;
 
 const sequelize = new Sequelize(
-  DATABASE_URL,
+  DB_URL,
 
   {
     logging: false,
@@ -30,6 +30,7 @@ fs.readdirSync(path.join(__dirname, "/models"))
 
 // Injectamos la conexion (sequelize) a todos los modelos
 modelDefiners.forEach((model) => model(sequelize));
+
 // Capitalizamos los nombres de los modelos ie: product => Product
 let entries = Object.entries(sequelize.models);
 let capsEntries = entries.map((entry) => [
@@ -51,10 +52,8 @@ const {
 Usuarios.hasMany(Suscripciones, { foreignKey: "usuarioId" });
 Suscripciones.belongsTo(Usuarios, { foreignKey: "usuarioId" });
 
-MetodosEntrenamiento.hasMany(EjercicioMetodos, { foreignKey: "metodoId" });
 Ejercicios.hasMany(EjercicioMetodos, { foreignKey: "ejercicioId" });
 
-EjercicioMetodos.belongsTo(MetodosEntrenamiento, { foreignKey: "metodoId" });
 EjercicioMetodos.belongsTo(Ejercicios, { foreignKey: "ejercicioId" });
 
 module.exports = {
