@@ -2,22 +2,22 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "MetodosEntrenamiento",
+    "TipoGrupoMuscular",
     {
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
       },
-      nombre: {
+      tipoGrupoMuscular: {
         type: DataTypes.STRING,
-        allowNull: false,
-        unique: true,
-      },
-      descripcion: {
-        type: DataTypes.TEXT,
+        defaultValue: null,
       },
     },
     { timestamps: false }
   );
 };
+
+//tipo muscular //
+// 1: grandes grupos
+// 2: pequeños grupos

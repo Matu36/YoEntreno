@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "EjercicioMomentoEntrenamiento",
+    "Historial",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -10,6 +10,6 @@ module.exports = (sequelize) => {
         primaryKey: true,
       },
     },
-    { timestamps: false }
+    { timestamps: true }
   );
 };

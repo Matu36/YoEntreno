@@ -44,17 +44,37 @@ sequelize.models = Object.fromEntries(capsEntries);
 const {
   Usuarios,
   Suscripciones,
-  MetodosEntrenamiento,
   Ejercicios,
-  EjercicioMetodos,
+  EjercicioGrupoMuscular,
+  EjercicioFaseEntrenamiento,
+  TipoGrupoMuscular,
 } = sequelize.models;
 
 Usuarios.hasMany(Suscripciones, { foreignKey: "usuarioId" });
 Suscripciones.belongsTo(Usuarios, { foreignKey: "usuarioId" });
 
-Ejercicios.hasMany(EjercicioMetodos, { foreignKey: "ejercicioId" });
+Ejercicios.belongsTo(EjercicioGrupoMuscular, {
+  foreignKey: "idEjercicioGrupoMuscular",
+});
+EjercicioGrupoMuscular.hasMany(Ejercicios, {
+  foreignKey: "idEjercicioGrupoMuscular",
+});
 
-EjercicioMetodos.belongsTo(Ejercicios, { foreignKey: "ejercicioId" });
+// 🔗 Relación: Ejercicio pertenece a una Fase de Entrenamiento
+Ejercicios.belongsTo(EjercicioFaseEntrenamiento, {
+  foreignKey: "idFaseEntrenamiento",
+});
+EjercicioFaseEntrenamiento.hasMany(Ejercicios, {
+  foreignKey: "idFaseEntrenamiento",
+});
+
+// 🔗 Relación: Grupo Muscular tiene un Tipo (grande o pequeño)
+EjercicioGrupoMuscular.belongsTo(TipoGrupoMuscular, {
+  foreignKey: "idTipoGrupoMuscular",
+});
+TipoGrupoMuscular.hasMany(EjercicioGrupoMuscular, {
+  foreignKey: "idTipoGrupoMuscular",
+});
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

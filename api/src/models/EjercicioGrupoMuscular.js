@@ -9,7 +9,21 @@ module.exports = (sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
+      idTipoGrupoMuscular: { type: DataTypes.INTEGER, allowNull: true },
+      grupoMuscular: { type: DataTypes.STRING, defaultValue: null },
     },
     { timestamps: false }
   );
 };
+
+// GRUPO 1: core
+// GRUPO 2: espalda
+// GRUPO 3: pectoral
+// GRUPO 4: hombros
+// GRUPO 5: biceps
+// GRUPO 6: triceps
+// GRUPO 7: piernas
+
+//idTipoGrupoMuscular //
+// 1: grandes grupos
+// 2: pequeños grupos
