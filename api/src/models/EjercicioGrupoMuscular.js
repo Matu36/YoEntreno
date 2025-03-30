@@ -26,6 +26,7 @@ module.exports = (sequelize) => {
 // GRUPO 5: biceps
 // GRUPO 6: triceps
 // GRUPO 7: piernas
+// GRUPO 8: dinamicos
 
 //idTipoGrupoMuscular //
 // 1: grandes grupos

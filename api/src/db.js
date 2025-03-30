@@ -67,6 +67,25 @@ EjercicioGrupoMuscular.hasMany(Ejercicios, {
   foreignKey: "idEjercicioGrupoMuscular",
 });
 
+Series.belongsTo(EjercicioGrupoMuscular, {
+  foreignKey: "idEjercicioGrupoMuscular",
+});
+EjercicioGrupoMuscular.hasMany(Series, {
+  foreignKey: "idEjercicioGrupoMuscular",
+});
+Repeticiones.belongsTo(EjercicioGrupoMuscular, {
+  foreignKey: "idEjercicioGrupoMuscular",
+});
+EjercicioGrupoMuscular.hasMany(Repeticiones, {
+  foreignKey: "idEjercicioGrupoMuscular",
+});
+Pausas.belongsTo(EjercicioGrupoMuscular, {
+  foreignKey: "idEjercicioGrupoMuscular",
+});
+EjercicioGrupoMuscular.hasMany(Pausas, {
+  foreignKey: "idEjercicioGrupoMuscular",
+});
+
 // 🔗 Relación: Ejercicio pertenece a una Fase de Entrenamiento (ENTRADA EN CALOR, CENTRAL, ETC)
 Ejercicios.belongsTo(EjercicioFaseEntrenamiento, {
   foreignKey: "idFaseEntrenamiento",

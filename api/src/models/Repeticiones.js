@@ -25,6 +25,7 @@ module.exports = (sequelize) => {
           key: "id",
         },
       },
+      idEjercicioGrupoMuscular: { type: DataTypes.INTEGER, allowNull: true },
       cantidad: {
         type: DataTypes.STRING,
         defaultValue: null,
