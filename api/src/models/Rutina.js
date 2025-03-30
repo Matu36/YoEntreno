@@ -56,6 +56,9 @@ module.exports = (sequelize) => {
       cantidadDias: {
         type: DataTypes.INTEGER,
       },
+      numeroRutina: {
+        type: DataTypes.INTEGER,
+      },
       nombre: {
         type: DataTypes.STRING,
       },

@@ -25,6 +25,10 @@ module.exports = (sequelize) => {
           key: "id",
         },
       },
+      cantidad: {
+        type: DataTypes.STRING,
+        defaultValue: null,
+      },
     },
     {
       timestamps: false,
