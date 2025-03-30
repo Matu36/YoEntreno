@@ -2,32 +2,28 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "MetodosEjerciciosDetalles",
+    "Pausas",
     {
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
       },
-      idMetodo: {
+      idTipoGrupoMuscular: {
         type: DataTypes.INTEGER,
+        allowNull: true,
+        references: {
+          model: "TipoGrupoMuscular",
+          key: "id",
+        },
+      },
+      idMetodoEntrenamiento: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
         references: {
           model: "MetodosEntrenamiento",
           key: "id",
         },
-      },
-      idObjetivo: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "ObjetivosEntrenamientos",
-          key: "id",
-        },
-      },
-      series: {
-        type: DataTypes.INTEGER,
-      },
-      repeticiones: {
-        type: DataTypes.INTEGER,
       },
     },
     {

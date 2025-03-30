@@ -11,7 +11,10 @@ module.exports = (sequelize) => {
       },
       fase: { type: DataTypes.STRING, defaultValue: null },
     },
-    { timestamps: false }
+    {
+      tableName: "EjercicioFaseEntrenamiento",
+      timestamps: false,
+    }
   );
 };
 

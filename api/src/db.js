@@ -48,16 +48,18 @@ const {
   EjercicioGrupoMuscular,
   EjercicioFaseEntrenamiento,
   TipoGrupoMuscular,
-  EjerciciosMetodos,
+  Series,
   MetodosEntrenamiento,
   ObjetivosEntrenamiento,
   Rutina,
-  MetodosEjerciciosDetalles,
+  Repeticiones,
+  Pausas,
 } = sequelize.models;
 
 Usuarios.hasMany(Suscripciones, { foreignKey: "usuarioId" });
 Suscripciones.belongsTo(Usuarios, { foreignKey: "usuarioId" });
 
+// 🔗 Relación: Ejercicio pertenece a un grupo muscular (CORE, ESPALDA, ETC)
 Ejercicios.belongsTo(EjercicioGrupoMuscular, {
   foreignKey: "idEjercicioGrupoMuscular",
 });
@@ -65,7 +67,7 @@ EjercicioGrupoMuscular.hasMany(Ejercicios, {
   foreignKey: "idEjercicioGrupoMuscular",
 });
 
-// 🔗 Relación: Ejercicio pertenece a una Fase de Entrenamiento
+// 🔗 Relación: Ejercicio pertenece a una Fase de Entrenamiento (ENTRADA EN CALOR, CENTRAL, ETC)
 Ejercicios.belongsTo(EjercicioFaseEntrenamiento, {
   foreignKey: "idFaseEntrenamiento",
 });
@@ -81,40 +83,109 @@ TipoGrupoMuscular.hasMany(EjercicioGrupoMuscular, {
   foreignKey: "idTipoGrupoMuscular",
 });
 
-Ejercicios.hasMany(EjerciciosMetodos, { foreignKey: "idEjercicio" });
-EjerciciosMetodos.belongsTo(Ejercicios, { foreignKey: "idEjercicio" });
-
-// Relación entre MetodosEntrenamiento y EjerciciosMetodos
-MetodosEntrenamiento.hasMany(EjerciciosMetodos, { foreignKey: "idMetodo" });
-EjerciciosMetodos.belongsTo(MetodosEntrenamiento, { foreignKey: "idMetodo" });
-
-Rutina.belongsTo(ObjetivosEntrenamiento, {
-  foreignKey: "idObjetivoEntrenamiento",
+// 🔗 Relación: Objetivo de entrenamiento tiene muchos Métodos de Entrenamiento
+ObjetivosEntrenamiento.hasMany(MetodosEntrenamiento, {
+  foreignKey: "idObjetivoEntrenamientos",
 });
-ObjetivosEntrenamiento.hasMany(Rutina, {
-  foreignKey: "idObjetivoEntrenamiento",
+MetodosEntrenamiento.belongsTo(ObjetivosEntrenamiento, {
+  foreignKey: "idObjetivoEntrenamientos",
 });
 
-MetodosEjerciciosDetalles.belongsTo(ObjetivosEntrenamiento, {
-  foreignKey: "idObjetivoEntrenamiento",
+// 🔗 Relación: Rutina pertenece a un Usuario
+Rutina.belongsTo(Usuarios, {
+  foreignKey: "usuarioId",
+  onDelete: "CASCADE",
 });
-ObjetivosEntrenamiento.hasMany(MetodosEjerciciosDetalles, {
-  foreignKey: "idObjetivoEntrenamiento",
-});
-
-Rutina.belongsTo(MetodosEntrenamiento, { foreignKey: "idMetodoEntrenamiento" });
-MetodosEntrenamiento.hasMany(Rutina, { foreignKey: "idMetodoEntrenamiento" });
-
-Rutina.hasMany(MetodosEjerciciosDetalles, {
-  foreignKey: "idMetodo",
-  sourceKey: "idMetodoEntrenamiento",
+Usuarios.hasMany(Rutina, {
+  foreignKey: "usuarioId",
 });
 
-MetodosEntrenamiento.hasMany(MetodosEjerciciosDetalles, {
-  foreignKey: "idMetodo",
+// 🔗 Relación: Rutina pertenece a un Método de Entrenamiento
+Rutina.belongsTo(MetodosEntrenamiento, {
+  foreignKey: "idMetodoEntrenamiento",
 });
-MetodosEjerciciosDetalles.belongsTo(MetodosEntrenamiento, {
-  foreignKey: "idMetodo",
+MetodosEntrenamiento.hasMany(Rutina, {
+  foreignKey: "idMetodoEntrenamiento",
+});
+
+// 🔗 Relación: Rutina tiene un Ejercicio
+Rutina.belongsTo(Ejercicios, {
+  foreignKey: "idEjercicios",
+});
+Ejercicios.hasMany(Rutina, {
+  foreignKey: "idEjercicios",
+});
+
+// 🔗 Relación: Rutina tiene una Serie
+Rutina.belongsTo(Series, {
+  foreignKey: "idSeries",
+});
+Series.hasMany(Rutina, {
+  foreignKey: "idSeries",
+});
+
+// 🔗 Relación: Rutina tiene un número de Repeticiones
+Rutina.belongsTo(Repeticiones, {
+  foreignKey: "idRepeticiones",
+});
+Repeticiones.hasMany(Rutina, {
+  foreignKey: "idRepeticiones",
+});
+
+// 🔗 Relación: Rutina tiene un Tiempo de Pausa
+Rutina.belongsTo(Pausas, {
+  foreignKey: "idPausas",
+});
+Pausas.hasMany(Rutina, {
+  foreignKey: "idPausas",
+});
+
+// 🔗 Relación: Serie pertenece a un Tipo de Grupo Muscular
+Series.belongsTo(TipoGrupoMuscular, {
+  foreignKey: "idTipoGrupoMuscular",
+});
+TipoGrupoMuscular.hasMany(Series, {
+  foreignKey: "idTipoGrupoMuscular",
+});
+
+// 🔗 Relación: Serie pertenece a un Método de Entrenamiento
+Series.belongsTo(MetodosEntrenamiento, {
+  foreignKey: "idMetodoEntrenamiento",
+});
+MetodosEntrenamiento.hasMany(Series, {
+  foreignKey: "idMetodoEntrenamiento",
+});
+
+// 🔗 Relación: Repeticiones pertenece a un Tipo de Grupo Muscular
+Repeticiones.belongsTo(TipoGrupoMuscular, {
+  foreignKey: "idTipoGrupoMuscular",
+});
+TipoGrupoMuscular.hasMany(Repeticiones, {
+  foreignKey: "idTipoGrupoMuscular",
+});
+
+// 🔗 Relación: Repeticiones pertenece a un Método de Entrenamiento
+Repeticiones.belongsTo(MetodosEntrenamiento, {
+  foreignKey: "idMetodoEntrenamiento",
+});
+MetodosEntrenamiento.hasMany(Repeticiones, {
+  foreignKey: "idMetodoEntrenamiento",
+});
+
+// 🔗 Relación: Pausas pertenece a un Tipo de Grupo Muscular
+TipoGrupoMuscular.hasMany(Pausas, {
+  foreignKey: "idTipoGrupoMuscular",
+});
+Pausas.belongsTo(TipoGrupoMuscular, {
+  foreignKey: "idTipoGrupoMuscular",
+});
+
+// 🔗 Relación: Pausas pertenece a un Método de Entrenamiento
+MetodosEntrenamiento.hasMany(Pausas, {
+  foreignKey: "idMetodoEntrenamiento",
+});
+Pausas.belongsTo(MetodosEntrenamiento, {
+  foreignKey: "idMetodoEntrenamiento",
 });
 
 module.exports = {

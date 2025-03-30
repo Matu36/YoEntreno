@@ -9,17 +9,22 @@ module.exports = (sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      metodo: {
+      idObjetivoEntrenamiento: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "ObjetivosEntrenamiento",
+          key: "id",
+        },
+      },
+      nombre: {
         type: DataTypes.STRING,
       },
       descripcion: {
         type: DataTypes.STRING,
       },
-      tipo: {
-        type: DataTypes.STRING,
-      },
     },
     {
+      tableName: "MetodosEntrenamiento",
       timestamps: false,
     }
   );

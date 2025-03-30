@@ -12,7 +12,10 @@ module.exports = (sequelize) => {
       idTipoGrupoMuscular: { type: DataTypes.INTEGER, allowNull: true },
       grupoMuscular: { type: DataTypes.STRING, defaultValue: null },
     },
-    { timestamps: false }
+    {
+      tableName: "EjercicioGrupoMuscular",
+      timestamps: false,
+    }
   );
 };
 

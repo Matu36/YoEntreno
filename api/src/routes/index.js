@@ -32,6 +32,8 @@ const {
 const { getObjetivos } = require("../controllers/Objetivos");
 const { getRutinaByFiltro } = require("../controllers/Rutina");
 
+const { getMétodos } = require("../controllers/Metodos");
+
 const check = require("../middlewares/auth");
 
 router.post("/usuarios/login", login);
@@ -51,5 +53,7 @@ router.post("/ejercicios/create", createEjercicio);
 
 router.get("/objetivos/get", getObjetivos);
 router.get("/rutina", getRutinaByFiltro);
+
+router.get("/metodosByObjetivo", getMétodos);
 
 module.exports = router;
