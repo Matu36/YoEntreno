@@ -30,6 +30,7 @@ const {
 } = require("../controllers/Ejercicios");
 
 const { getObjetivos } = require("../controllers/Objetivos");
+const { getRutinaByFiltro } = require("../controllers/Rutina");
 
 const check = require("../middlewares/auth");
 
@@ -49,5 +50,6 @@ router.get("/ejercicios/ejercicioGrupoMuscular", getEjercicioGrupoMuscular);
 router.post("/ejercicios/create", createEjercicio);
 
 router.get("/objetivos/get", getObjetivos);
+router.get("/rutina", getRutinaByFiltro);
 
 module.exports = router;

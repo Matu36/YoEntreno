@@ -48,6 +48,11 @@ const {
   EjercicioGrupoMuscular,
   EjercicioFaseEntrenamiento,
   TipoGrupoMuscular,
+  EjerciciosMetodos,
+  MetodosEntrenamiento,
+  ObjetivosEntrenamiento,
+  Rutina,
+  MetodosEjerciciosDetalles,
 } = sequelize.models;
 
 Usuarios.hasMany(Suscripciones, { foreignKey: "usuarioId" });
@@ -74,6 +79,42 @@ EjercicioGrupoMuscular.belongsTo(TipoGrupoMuscular, {
 });
 TipoGrupoMuscular.hasMany(EjercicioGrupoMuscular, {
   foreignKey: "idTipoGrupoMuscular",
+});
+
+Ejercicios.hasMany(EjerciciosMetodos, { foreignKey: "idEjercicio" });
+EjerciciosMetodos.belongsTo(Ejercicios, { foreignKey: "idEjercicio" });
+
+// Relación entre MetodosEntrenamiento y EjerciciosMetodos
+MetodosEntrenamiento.hasMany(EjerciciosMetodos, { foreignKey: "idMetodo" });
+EjerciciosMetodos.belongsTo(MetodosEntrenamiento, { foreignKey: "idMetodo" });
+
+Rutina.belongsTo(ObjetivosEntrenamiento, {
+  foreignKey: "idObjetivoEntrenamiento",
+});
+ObjetivosEntrenamiento.hasMany(Rutina, {
+  foreignKey: "idObjetivoEntrenamiento",
+});
+
+MetodosEjerciciosDetalles.belongsTo(ObjetivosEntrenamiento, {
+  foreignKey: "idObjetivoEntrenamiento",
+});
+ObjetivosEntrenamiento.hasMany(MetodosEjerciciosDetalles, {
+  foreignKey: "idObjetivoEntrenamiento",
+});
+
+Rutina.belongsTo(MetodosEntrenamiento, { foreignKey: "idMetodoEntrenamiento" });
+MetodosEntrenamiento.hasMany(Rutina, { foreignKey: "idMetodoEntrenamiento" });
+
+Rutina.hasMany(MetodosEjerciciosDetalles, {
+  foreignKey: "idMetodo",
+  sourceKey: "idMetodoEntrenamiento",
+});
+
+MetodosEntrenamiento.hasMany(MetodosEjerciciosDetalles, {
+  foreignKey: "idMetodo",
+});
+MetodosEjerciciosDetalles.belongsTo(MetodosEntrenamiento, {
+  foreignKey: "idMetodo",
 });
 
 module.exports = {

@@ -18,3 +18,7 @@ module.exports = (sequelize) => {
     { timestamps: false }
   );
 };
+
+// aca tenemos todos los ejercicios clasificados en entrada en calor, parte central, vuelta a la calma
+// en grandes y pequeños grupos musculares
+// en grupo muscular
