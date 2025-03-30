@@ -24,7 +24,12 @@ const {
 const {
   getEjercicios,
   getGrupoMuscular,
+  getFaseEntrenamiento,
+  getEjercicioGrupoMuscular,
+  createEjercicio,
 } = require("../controllers/Ejercicios");
+
+const { getObjetivos } = require("../controllers/Objetivos");
 
 const check = require("../middlewares/auth");
 
@@ -39,5 +44,10 @@ router.get("/usuarios/all", check.auth, getAllUsers);
 router.put("/usuarios/recoverpass", resetPassword);
 router.get("/ejercicios/get", getEjercicios);
 router.get("/ejercicios/tipoGrupoMuscular", getGrupoMuscular);
+router.get("/ejercicios/faseEntrenamiento", getFaseEntrenamiento);
+router.get("/ejercicios/ejercicioGrupoMuscular", getEjercicioGrupoMuscular);
+router.post("/ejercicios/create", createEjercicio);
+
+router.get("/objetivos/get", getObjetivos);
 
 module.exports = router;
