@@ -29,3 +29,5 @@ module.exports = (sequelize) => {
     }
   );
 };
+
+// segun el objetivo, se despliega el metodo de entrenamiento //

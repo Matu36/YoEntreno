@@ -34,6 +34,8 @@ const { getRutinaByFiltro } = require("../controllers/Rutina");
 
 const { getMétodos } = require("../controllers/Metodos");
 
+const { getApi } = require("../controllers/api");
+
 const check = require("../middlewares/auth");
 
 router.post("/usuarios/login", login);
