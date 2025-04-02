@@ -69,10 +69,10 @@ Suscripciones.belongsTo(Usuarios, { foreignKey: "usuarioId" });
 
 // METODOS //
 ObjetivosEntrenamiento.hasMany(MetodosEntrenamiento, {
-  foreignKey: "idObjetivoEntrenamientos",
+  foreignKey: "idObjetivoEntrenamiento",
 });
 MetodosEntrenamiento.belongsTo(ObjetivosEntrenamiento, {
-  foreignKey: "idObjetivoEntrenamientos",
+  foreignKey: "idObjetivoEntrenamiento",
 });
 
 // METODOS //
@@ -107,8 +107,8 @@ TipoGrupoMuscular.hasMany(Ejercicios, {
 
 // INTENSIDAD //
 
-Ejercicios.hasMany(Intensidades, { foreignKey: "IntensidadId" });
-Intensidades.belongsTo(Ejercicios, { foreignKey: "IntensidadId" });
+Ejercicios.hasMany(Intensidades, { foreignKey: "idIntensidad" });
+Intensidades.belongsTo(Ejercicios, { foreignKey: "idIntensidad" });
 
 // INTENSIDAD //
 

@@ -9,13 +9,7 @@ module.exports = (sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      idEjercicios: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "Ejercicios",
-          key: "id",
-        },
-      },
+
       Dificultad: {
         type: DataTypes.STRING,
         defaultValue: null,

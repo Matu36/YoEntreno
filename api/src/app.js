@@ -42,7 +42,6 @@ async function iniciarCarga() {
   }
 }
 
-// Ejecutar la función
 iniciarCarga();
 
 // Error catching endware.
