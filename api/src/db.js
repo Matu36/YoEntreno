@@ -148,10 +148,10 @@ SeriesRepesPausas.hasMany(Rutina, {
 // SERIES //
 
 Series.belongsTo(Ejercicios, {
-  foreignKey: "idEjecicios",
+  foreignKey: "idEjercicios",
 });
 Ejercicios.hasMany(Series, {
-  foreignKey: "idEjecicios",
+  foreignKey: "idEjercicios",
 });
 
 Series.belongsTo(MetodosEntrenamiento, {
@@ -165,28 +165,21 @@ MetodosEntrenamiento.hasMany(Series, {
 
 // REPETICIONES //
 
-Repeticiones.belongsTo(Ejercicios, {
-  foreignKey: "idEjecicios",
+Repeticiones.belongsTo(Series, {
+  foreignKey: "idSeries",
 });
-Ejercicios.hasMany(Repeticiones, {
-  foreignKey: "idEjecicios",
-});
-
-Repeticiones.belongsTo(MetodosEntrenamiento, {
-  foreignKey: "idMetodoEntrenamiento",
-});
-MetodosEntrenamiento.hasMany(Repeticiones, {
-  foreignKey: "idMetodoEntrenamiento",
+Series.hasMany(Repeticiones, {
+  foreignKey: "idSeries",
 });
 
 // REPETICIONES //
 
 // PAUSAS //
 Ejercicios.hasMany(Pausas, {
-  foreignKey: "idEjecicios",
+  foreignKey: "idEjercicios",
 });
 Pausas.belongsTo(Ejercicios, {
-  foreignKey: "idEjecicios",
+  foreignKey: "idEjercicios",
 });
 
 MetodosEntrenamiento.hasMany(Pausas, {

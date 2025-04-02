@@ -9,25 +9,17 @@ module.exports = (sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      idEjercicios: {
+      idSeries: {
         type: DataTypes.INTEGER,
-        allowNull: true,
+        allowNull: false,
         references: {
-          model: "Ejercicios",
-          key: "id",
-        },
-      },
-      idMetodoEntrenamiento: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-          model: "MetodosEntrenamiento",
+          model: "Series",
           key: "id",
         },
       },
       cantidad: {
-        type: DataTypes.STRING,
-        defaultValue: null,
+        type: DataTypes.INTEGER,
+        allowNull: false,
       },
     },
     {

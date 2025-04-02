@@ -5,6 +5,7 @@ const morgan = require("morgan");
 const routes = require("./routes/index.js");
 
 const populateDatabase = require("../src/seeders/LlenarBaseDeDatos.js");
+const cargarSeries = require("../src/seeders/CargaSeries.js");
 
 require("./db.js");
 
@@ -30,7 +31,19 @@ server.use((req, res, next) => {
 
 server.use("/", routes);
 
-populateDatabase();
+async function iniciarCarga() {
+  try {
+    await populateDatabase();
+    console.log("✅ Base de datos poblada correctamente.");
+    await cargarSeries();
+    console.log("✅ Series cargadas correctamente.");
+  } catch (error) {
+    console.error("❌ Error durante la carga de datos:", error);
+  }
+}
+
+// Ejecutar la función
+iniciarCarga();
 
 // Error catching endware.
 server.use((err, req, res, next) => {

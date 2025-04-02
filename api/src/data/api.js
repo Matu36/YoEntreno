@@ -1298,6 +1298,8 @@ const dificultades = [
   },
 ];
 
+const SeriesCircuitodefuerzaadaptativa = [];
+
 module.exports = {
   EjercicioCategoriaApi,
   ejercicios,
