@@ -5,6 +5,7 @@ const {
   ejercicioFaseEntrenamiento,
   EjercicioCategoriaApi,
   ejercicios,
+  dificultades,
 } = require("../data/api.js");
 
 const {
@@ -14,6 +15,7 @@ const {
   EjercicioCategoria,
   TipoGrupoMuscular,
   EjercicioFaseEntrenamiento,
+  Dificultad,
 } = require("../db.js");
 
 const populateDatabase = async () => {
@@ -34,6 +36,9 @@ const populateDatabase = async () => {
 
     await EjercicioFaseEntrenamiento.bulkCreate(ejercicioFaseEntrenamiento);
     console.log("Fases de Entrenamiento insertadas.");
+
+    await Dificultad.bulkCreate(dificultades);
+    console.log("Ejercicios insertados.");
 
     await Ejercicios.bulkCreate(ejercicios);
     console.log("Ejercicios insertados.");

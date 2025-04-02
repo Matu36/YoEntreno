@@ -79,8 +79,8 @@ MetodosEntrenamiento.belongsTo(ObjetivosEntrenamiento, {
 
 /// EJERCICIOS ///
 
-Dificultad.hasMany(Ejercicios, { foreignKey: "dificultadId" });
-Ejercicios.belongsTo(Dificultad, { foreignKey: "dificultadId" });
+Dificultad.hasMany(Ejercicios, { foreignKey: "idDificultad" });
+Ejercicios.belongsTo(Dificultad, { foreignKey: "idDificultad" });
 
 Ejercicios.belongsTo(EjercicioCategoria, {
   foreignKey: "idCategoria",
