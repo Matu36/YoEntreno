@@ -49,28 +49,4 @@ const populateDatabase = async () => {
   }
 };
 
-const cargarSeries = async () => {
-  try {
-    // Filtrar ejercicios que se incluirán en el método de entrenamiento "Circuito de fuerza adaptativa"
-    const seriesData = ejercicios
-      .filter((ejercicio) => ejercicio.idDificultad === 1) // Solo ejercicios de dificultad "Inicial"
-      .map((ejercicio, index) => ({
-        idEjercicios: ejercicio.id, // ID del ejercicio existente
-        idMetodoEntrenamiento: 1, // ID del método "Circuito de fuerza adaptativa"
-        cantidad: index % 2 === 0 ? "3x12" : "4x10", // Alternar cantidad de repeticiones
-        idDificultad: 1, // Siempre dificultad 1
-        idTipoGrupoMuscular: index % 2 === 0 ? 1 : 2, // Alternar entre 1 y 2
-        idCategoria: (index % 8) + 1, // Ciclar entre categorías 1-8
-        idFaseEntrenamiento: (index % 3) + 1, // Ciclar entre fases 1-3
-      }));
-
-    // Insertar en la base de datos usando bulkCreate
-    await Series.bulkCreate(seriesData);
-
-    console.log("Datos insertados correctamente en la tabla Series.");
-  } catch (error) {
-    console.error("Error al insertar series:", error);
-  }
-};
-
 module.exports = populateDatabase;

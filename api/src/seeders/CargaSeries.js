@@ -2,9 +2,9 @@ const { ejercicios } = require("../data/api.js");
 
 const { Series } = require("../db.js");
 
+// METODO 1 //
 const cargarSeries = async () => {
   try {
-    // Filtrar ejercicios que cumplan con las condiciones
     const seriesData = ejercicios
       .filter(
         (ejercicio) =>
@@ -19,7 +19,6 @@ const cargarSeries = async () => {
         cantidad: index % 2 === 0 ? "3x12" : "4x10", // Alternar cantidad de repeticiones
       }));
 
-    // Insertar datos en la base de datos
     await Series.bulkCreate(seriesData);
 
     console.log("Datos insertados correctamente en la tabla Series.");
