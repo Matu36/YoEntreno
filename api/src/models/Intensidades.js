@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "Pausas",
+    "Intensidades",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -17,22 +17,18 @@ module.exports = (sequelize) => {
           key: "id",
         },
       },
-      idMetodoEntrenamiento: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-        references: {
-          model: "MetodosEntrenamiento",
-          key: "id",
-        },
-      },
-
-      cantidad: {
-        type: DataTypes.STRING,
-        defaultValue: null,
-      },
+      tipo: { type: DataTypes.STRING, defaultValue: null },
+      Intensidad: { type: DataTypes.STRING, defaultValue: null },
     },
     {
+      tableName: "Intensidades",
       timestamps: false,
     }
   );
 };
+
+/* 
+1 baja      50 %
+2 media     70 %
+3 alta      80 a 100 %
+*/

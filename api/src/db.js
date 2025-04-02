@@ -2,6 +2,7 @@ require("dotenv").config();
 const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
+const Intensidad = require("./models/Intensidades");
 const { DB_URL, DATABASE_URL } = process.env;
 
 const sequelize = new Sequelize(
@@ -45,7 +46,7 @@ const {
   Usuarios,
   Suscripciones,
   Ejercicios,
-  EjercicioGrupoMuscular,
+  EjercicioCategoria,
   EjercicioFaseEntrenamiento,
   TipoGrupoMuscular,
   Series,
@@ -54,55 +55,19 @@ const {
   Rutina,
   Repeticiones,
   Pausas,
+  Dificultad,
+  Intensidades,
+  SeriesRepesPausas,
 } = sequelize.models;
+
+// SUSCRIPCIONES //
 
 Usuarios.hasMany(Suscripciones, { foreignKey: "usuarioId" });
 Suscripciones.belongsTo(Usuarios, { foreignKey: "usuarioId" });
 
-// 🔗 Relación: Ejercicio pertenece a un grupo muscular (CORE, ESPALDA, ETC)
-Ejercicios.belongsTo(EjercicioGrupoMuscular, {
-  foreignKey: "idEjercicioGrupoMuscular",
-});
-EjercicioGrupoMuscular.hasMany(Ejercicios, {
-  foreignKey: "idEjercicioGrupoMuscular",
-});
+// SUSCRIPCIONES //
 
-Series.belongsTo(EjercicioGrupoMuscular, {
-  foreignKey: "idEjercicioGrupoMuscular",
-});
-EjercicioGrupoMuscular.hasMany(Series, {
-  foreignKey: "idEjercicioGrupoMuscular",
-});
-Repeticiones.belongsTo(EjercicioGrupoMuscular, {
-  foreignKey: "idEjercicioGrupoMuscular",
-});
-EjercicioGrupoMuscular.hasMany(Repeticiones, {
-  foreignKey: "idEjercicioGrupoMuscular",
-});
-Pausas.belongsTo(EjercicioGrupoMuscular, {
-  foreignKey: "idEjercicioGrupoMuscular",
-});
-EjercicioGrupoMuscular.hasMany(Pausas, {
-  foreignKey: "idEjercicioGrupoMuscular",
-});
-
-// 🔗 Relación: Ejercicio pertenece a una Fase de Entrenamiento (ENTRADA EN CALOR, CENTRAL, ETC)
-Ejercicios.belongsTo(EjercicioFaseEntrenamiento, {
-  foreignKey: "idFaseEntrenamiento",
-});
-EjercicioFaseEntrenamiento.hasMany(Ejercicios, {
-  foreignKey: "idFaseEntrenamiento",
-});
-
-// 🔗 Relación: Grupo Muscular tiene un Tipo (grande o pequeño)
-EjercicioGrupoMuscular.belongsTo(TipoGrupoMuscular, {
-  foreignKey: "idTipoGrupoMuscular",
-});
-TipoGrupoMuscular.hasMany(EjercicioGrupoMuscular, {
-  foreignKey: "idTipoGrupoMuscular",
-});
-
-// 🔗 Relación: Objetivo de entrenamiento tiene muchos Métodos de Entrenamiento
+// METODOS //
 ObjetivosEntrenamiento.hasMany(MetodosEntrenamiento, {
   foreignKey: "idObjetivoEntrenamientos",
 });
@@ -110,7 +75,45 @@ MetodosEntrenamiento.belongsTo(ObjetivosEntrenamiento, {
   foreignKey: "idObjetivoEntrenamientos",
 });
 
-// 🔗 Relación: Rutina pertenece a un Usuario
+// METODOS //
+
+/// EJERCICIOS ///
+
+Dificultad.hasMany(Ejercicios, { foreignKey: "dificultadId" });
+Ejercicios.belongsTo(Dificultad, { foreignKey: "dificultadId" });
+
+Ejercicios.belongsTo(EjercicioCategoria, {
+  foreignKey: "idCategoria",
+});
+EjercicioCategoria.hasMany(Ejercicios, {
+  foreignKey: "idCategoria",
+});
+
+Ejercicios.belongsTo(EjercicioFaseEntrenamiento, {
+  foreignKey: "idFaseEntrenamiento",
+});
+EjercicioFaseEntrenamiento.hasMany(Ejercicios, {
+  foreignKey: "idFaseEntrenamiento",
+});
+
+Ejercicios.belongsTo(TipoGrupoMuscular, {
+  foreignKey: "idTipoGrupoMuscular",
+});
+TipoGrupoMuscular.hasMany(Ejercicios, {
+  foreignKey: "idTipoGrupoMuscular",
+});
+
+/// EJERCICIOS ///
+
+// INTENSIDAD //
+
+Ejercicios.hasMany(Intensidades, { foreignKey: "IntensidadId" });
+Intensidades.belongsTo(Ejercicios, { foreignKey: "IntensidadId" });
+
+// INTENSIDAD //
+
+// RUTINA //
+
 Rutina.belongsTo(Usuarios, {
   foreignKey: "usuarioId",
   onDelete: "CASCADE",
@@ -119,7 +122,6 @@ Usuarios.hasMany(Rutina, {
   foreignKey: "usuarioId",
 });
 
-// 🔗 Relación: Rutina pertenece a un Método de Entrenamiento
 Rutina.belongsTo(MetodosEntrenamiento, {
   foreignKey: "idMetodoEntrenamiento",
 });
@@ -127,7 +129,6 @@ MetodosEntrenamiento.hasMany(Rutina, {
   foreignKey: "idMetodoEntrenamiento",
 });
 
-// 🔗 Relación: Rutina tiene un Ejercicio
 Rutina.belongsTo(Ejercicios, {
   foreignKey: "idEjercicios",
 });
@@ -135,39 +136,24 @@ Ejercicios.hasMany(Rutina, {
   foreignKey: "idEjercicios",
 });
 
-// 🔗 Relación: Rutina tiene una Serie
-Rutina.belongsTo(Series, {
-  foreignKey: "idSeries",
+Rutina.belongsTo(SeriesRepesPausas, {
+  foreignKey: "idSeriesRepesPausas",
 });
-Series.hasMany(Rutina, {
-  foreignKey: "idSeries",
-});
-
-// 🔗 Relación: Rutina tiene un número de Repeticiones
-Rutina.belongsTo(Repeticiones, {
-  foreignKey: "idRepeticiones",
-});
-Repeticiones.hasMany(Rutina, {
-  foreignKey: "idRepeticiones",
+SeriesRepesPausas.hasMany(Rutina, {
+  foreignKey: "idSeriesRepesPausas",
 });
 
-// 🔗 Relación: Rutina tiene un Tiempo de Pausa
-Rutina.belongsTo(Pausas, {
-  foreignKey: "idPausas",
+// RUTINA //
+
+// SERIES //
+
+Series.belongsTo(Ejercicios, {
+  foreignKey: "idEjecicios",
 });
-Pausas.hasMany(Rutina, {
-  foreignKey: "idPausas",
+Ejercicios.hasMany(Series, {
+  foreignKey: "idEjecicios",
 });
 
-// 🔗 Relación: Serie pertenece a un Tipo de Grupo Muscular
-Series.belongsTo(TipoGrupoMuscular, {
-  foreignKey: "idTipoGrupoMuscular",
-});
-TipoGrupoMuscular.hasMany(Series, {
-  foreignKey: "idTipoGrupoMuscular",
-});
-
-// 🔗 Relación: Serie pertenece a un Método de Entrenamiento
 Series.belongsTo(MetodosEntrenamiento, {
   foreignKey: "idMetodoEntrenamiento",
 });
@@ -175,15 +161,17 @@ MetodosEntrenamiento.hasMany(Series, {
   foreignKey: "idMetodoEntrenamiento",
 });
 
-// 🔗 Relación: Repeticiones pertenece a un Tipo de Grupo Muscular
-Repeticiones.belongsTo(TipoGrupoMuscular, {
-  foreignKey: "idTipoGrupoMuscular",
+// SERIES //
+
+// REPETICIONES //
+
+Repeticiones.belongsTo(Ejercicios, {
+  foreignKey: "idEjecicios",
 });
-TipoGrupoMuscular.hasMany(Repeticiones, {
-  foreignKey: "idTipoGrupoMuscular",
+Ejercicios.hasMany(Repeticiones, {
+  foreignKey: "idEjecicios",
 });
 
-// 🔗 Relación: Repeticiones pertenece a un Método de Entrenamiento
 Repeticiones.belongsTo(MetodosEntrenamiento, {
   foreignKey: "idMetodoEntrenamiento",
 });
@@ -191,21 +179,49 @@ MetodosEntrenamiento.hasMany(Repeticiones, {
   foreignKey: "idMetodoEntrenamiento",
 });
 
-// 🔗 Relación: Pausas pertenece a un Tipo de Grupo Muscular
-TipoGrupoMuscular.hasMany(Pausas, {
-  foreignKey: "idTipoGrupoMuscular",
+// REPETICIONES //
+
+// PAUSAS //
+Ejercicios.hasMany(Pausas, {
+  foreignKey: "idEjecicios",
 });
-Pausas.belongsTo(TipoGrupoMuscular, {
-  foreignKey: "idTipoGrupoMuscular",
+Pausas.belongsTo(Ejercicios, {
+  foreignKey: "idEjecicios",
 });
 
-// 🔗 Relación: Pausas pertenece a un Método de Entrenamiento
 MetodosEntrenamiento.hasMany(Pausas, {
   foreignKey: "idMetodoEntrenamiento",
 });
 Pausas.belongsTo(MetodosEntrenamiento, {
   foreignKey: "idMetodoEntrenamiento",
 });
+
+// PAUSAS //
+
+// SERIESREPESPAUSAS //
+
+Series.hasMany(SeriesRepesPausas, {
+  foreignKey: "idSeries",
+});
+SeriesRepesPausas.belongsTo(Series, {
+  foreignKey: "idSeries",
+});
+
+Repeticiones.hasMany(SeriesRepesPausas, {
+  foreignKey: "idRepeticiones",
+});
+SeriesRepesPausas.belongsTo(Repeticiones, {
+  foreignKey: "idRepeticiones",
+});
+
+Pausas.hasMany(SeriesRepesPausas, {
+  foreignKey: "idPausas",
+});
+SeriesRepesPausas.belongsTo(Pausas, {
+  foreignKey: "idPausas",
+});
+
+// SERIESREPESPAUSAS //
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

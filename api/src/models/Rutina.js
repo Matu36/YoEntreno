@@ -18,10 +18,21 @@ module.exports = (sequelize) => {
         },
         onDelete: "CASCADE",
       },
+      cantidadDias: {
+        type: DataTypes.INTEGER,
+      },
+
       idMetodoEntrenamiento: {
         type: DataTypes.INTEGER,
         references: {
           model: "MetodosEntrenamiento",
+          key: "id",
+        },
+      },
+      idSeriesRepesPausas: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "SeriesRepesPausas",
           key: "id",
         },
       },
@@ -32,30 +43,7 @@ module.exports = (sequelize) => {
           key: "id",
         },
       },
-      idSeries: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "Series",
-          key: "id",
-        },
-      },
-      idRepeticiones: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "Repeticiones",
-          key: "id",
-        },
-      },
-      idPausas: {
-        type: DataTypes.INTEGER,
-        references: {
-          model: "Pausas",
-          key: "id",
-        },
-      },
-      cantidadDias: {
-        type: DataTypes.INTEGER,
-      },
+
       numeroRutina: {
         type: DataTypes.INTEGER,
       },

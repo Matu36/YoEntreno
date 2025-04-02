@@ -34,8 +34,6 @@ const { getRutinaByFiltro } = require("../controllers/Rutina");
 
 const { getMétodos } = require("../controllers/Metodos");
 
-const { getApi } = require("../controllers/api");
-
 const check = require("../middlewares/auth");
 
 router.post("/usuarios/login", login);
@@ -54,7 +52,7 @@ router.get("/ejercicios/ejercicioGrupoMuscular", getEjercicioGrupoMuscular);
 router.post("/ejercicios/create", createEjercicio);
 
 router.get("/objetivos/get", getObjetivos);
-router.get("/rutina", getRutinaByFiltro);
+router.get("/rutina/adaptacion", getRutinaByFiltro);
 
 router.get("/metodosByObjetivo", getMétodos);
 

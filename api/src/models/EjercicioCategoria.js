@@ -2,32 +2,27 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "EjercicioGrupoMuscular",
+    "EjercicioCategoria",
     {
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
       },
-      idTipoGrupoMuscular: { type: DataTypes.INTEGER, allowNull: true },
       grupoMuscular: { type: DataTypes.STRING, defaultValue: null },
     },
     {
-      tableName: "EjercicioGrupoMuscular",
+      tableName: "EjercicioCategoria",
       timestamps: false,
     }
   );
 };
 
-// GRUPO 1: core
-// GRUPO 2: espalda
+// GRUPO 1: dinamicos
+// GRUPO 2: core
 // GRUPO 3: pectoral
-// GRUPO 4: hombros
-// GRUPO 5: biceps
-// GRUPO 6: triceps
-// GRUPO 7: piernas
-// GRUPO 8: dinamicos
-
-//idTipoGrupoMuscular //
-// 1: grandes grupos
-// 2: pequeños grupos
+// GRUPO 4: espalda
+// GRUPO 5: piernas
+// GRUPO 6: hombros
+// GRUPO 7: biceps
+// GRUPO 8: triceps

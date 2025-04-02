@@ -9,11 +9,13 @@ module.exports = (sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      nombre: { type: DataTypes.STRING, allowNull: false },
-      idEjercicioGrupoMuscular: { type: DataTypes.INTEGER, allowNull: true },
+      Nombre: { type: DataTypes.STRING, allowNull: false },
+      Descripcion: { type: DataTypes.TEXT, defaultValue: null },
+      Video: { type: DataTypes.TEXT, defaultValue: null },
+      idCategoria: { type: DataTypes.INTEGER, allowNull: true },
       idFaseEntrenamiento: { type: DataTypes.INTEGER, allowNull: true },
-      descripcion: { type: DataTypes.TEXT, defaultValue: null },
-      videoURL: { type: DataTypes.TEXT, defaultValue: null },
+      idDificultad: { type: DataTypes.INTEGER, allowNull: true },
+      idTipoGrupoMuscular: { type: DataTypes.INTEGER, allowNull: true },
     },
     { timestamps: false }
   );

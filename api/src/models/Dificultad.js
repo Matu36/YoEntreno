@@ -2,25 +2,34 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "TipoGrupoMuscular",
+    "Dificultad",
     {
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
       },
-      tipoGrupoMuscular: {
+      idEjercicios: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "Ejercicios",
+          key: "id",
+        },
+      },
+      Dificultad: {
         type: DataTypes.STRING,
         defaultValue: null,
       },
     },
     {
-      tableName: "TipoGrupoMuscular",
+      tableName: "Dificultad",
       timestamps: false,
     }
   );
 };
 
-//tipo muscular //
-// 1: Pequeños
-// 2: Grandes
+/* 
+1 Inicial
+2 Medio
+3 Avanzada
+ */

@@ -9,11 +9,11 @@ module.exports = (sequelize) => {
         autoIncrement: true,
         primaryKey: true,
       },
-      idTipoGrupoMuscular: {
+      idEjercicios: {
         type: DataTypes.INTEGER,
         allowNull: true,
         references: {
-          model: "TipoGrupoMuscular",
+          model: "Ejercicios",
           key: "id",
         },
       },
@@ -25,7 +25,6 @@ module.exports = (sequelize) => {
           key: "id",
         },
       },
-      idEjercicioGrupoMuscular: { type: DataTypes.INTEGER, allowNull: true },
       cantidad: {
         type: DataTypes.STRING,
         defaultValue: null,
