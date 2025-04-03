@@ -2,7 +2,7 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "Intensidades",
+    "NivelProgresion",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -10,18 +10,17 @@ module.exports = (sequelize) => {
         primaryKey: true,
       },
 
-      tipo: { type: DataTypes.STRING, defaultValue: null },
-      Intensidad: { type: DataTypes.STRING, defaultValue: null },
+      nivel: { type: DataTypes.STRING, defaultValue: null },
     },
     {
-      tableName: "Intensidades",
+      tableName: "NivelProgresion",
       timestamps: false,
     }
   );
 };
 
 /* 
-1 baja      50 %
-2 media     70 %
-3 alta      80 a 100 %
+1 Inicial
+2 Media
+3 Avanzada
 */

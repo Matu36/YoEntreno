@@ -2,26 +2,29 @@ const { DataTypes } = require("sequelize");
 
 module.exports = (sequelize) => {
   sequelize.define(
-    "Intensidades",
+    "EjerciciosTipoMaterial",
     {
       id: {
         type: DataTypes.INTEGER,
         autoIncrement: true,
         primaryKey: true,
       },
-
-      tipo: { type: DataTypes.STRING, defaultValue: null },
-      Intensidad: { type: DataTypes.STRING, defaultValue: null },
+      material: { type: DataTypes.STRING, defaultValue: null },
     },
     {
-      tableName: "Intensidades",
+      tableName: "EjerciciosTipoMaterial",
       timestamps: false,
     }
   );
 };
 
 /* 
-1 baja      50 %
-2 media     70 %
-3 alta      80 a 100 %
+1 Mancuernas
+2 Bandas elásticas
+3 Barras 
+4 Pesas rusas
+5 Balón medicinal
+6 Poleas
+7 Máquinas
+8 Propio Cuerpo
 */

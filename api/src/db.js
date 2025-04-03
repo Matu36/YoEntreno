@@ -58,6 +58,8 @@ const {
   Dificultad,
   Intensidades,
   SeriesRepesPausas,
+  EjerciciosTipoMaterial,
+  MetodoEjercicio,
 } = sequelize.models;
 
 // SUSCRIPCIONES //
@@ -77,10 +79,34 @@ MetodosEntrenamiento.belongsTo(ObjetivosEntrenamiento, {
 
 // METODOS //
 
+// METODOSEJERCICIOS //
+
+Ejercicios.hasMany(MetodoEjercicio, {
+  foreignKey: "idEjercicios",
+});
+MetodoEjercicio.belongsTo(Ejercicios, {
+  foreignKey: "idEjercicios",
+});
+MetodosEntrenamiento.hasMany(MetodoEjercicio, {
+  foreignKey: "idMetodoEntrenamiento",
+});
+MetodoEjercicio.belongsTo(MetodosEntrenamiento, {
+  foreignKey: "idMetodoEntrenamiento",
+});
+
+// METODOSEJERCICIOS //
+
 /// EJERCICIOS ///
 
 Dificultad.hasMany(Ejercicios, { foreignKey: "idDificultad" });
 Ejercicios.belongsTo(Dificultad, { foreignKey: "idDificultad" });
+
+EjerciciosTipoMaterial.hasMany(Ejercicios, {
+  foreignKey: "idEjercicioTipoMaterial",
+});
+Ejercicios.belongsTo(EjerciciosTipoMaterial, {
+  foreignKey: "idEjercicioTipoMaterial",
+});
 
 Ejercicios.belongsTo(EjercicioCategoria, {
   foreignKey: "idCategoria",
@@ -107,8 +133,8 @@ TipoGrupoMuscular.hasMany(Ejercicios, {
 
 // INTENSIDAD //
 
-Ejercicios.hasMany(Intensidades, { foreignKey: "idIntensidad" });
-Intensidades.belongsTo(Ejercicios, { foreignKey: "idIntensidad" });
+Intensidades.hasMany(MetodosEntrenamiento, { foreignKey: "idIntensidad" });
+MetodosEntrenamiento.belongsTo(Intensidades, { foreignKey: "idIntensidad" });
 
 // INTENSIDAD //
 
@@ -194,9 +220,16 @@ Pausas.belongsTo(MetodosEntrenamiento, {
 // SERIESREPESPAUSAS //
 
 Series.hasMany(SeriesRepesPausas, {
-  foreignKey: "idSeries",
+  foreignKey: "idEjercicios",
 });
 SeriesRepesPausas.belongsTo(Series, {
+  foreignKey: "idEjercicios",
+});
+
+Ejercicios.hasMany(SeriesRepesPausas, {
+  foreignKey: "idSeries",
+});
+SeriesRepesPausas.belongsTo(Ejercicios, {
   foreignKey: "idSeries",
 });
 
@@ -212,6 +245,13 @@ Pausas.hasMany(SeriesRepesPausas, {
 });
 SeriesRepesPausas.belongsTo(Pausas, {
   foreignKey: "idPausas",
+});
+
+MetodosEntrenamiento.hasMany(SeriesRepesPausas, {
+  foreignKey: "idMetodoEntrenamiento",
+});
+SeriesRepesPausas.belongsTo(MetodosEntrenamiento, {
+  foreignKey: "idMetodoEntrenamiento",
 });
 
 // SERIESREPESPAUSAS //

@@ -16,6 +16,13 @@ module.exports = (sequelize) => {
           key: "id",
         },
       },
+      idIntensidad: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: "Intensidades",
+          key: "id",
+        },
+      },
       nombre: {
         type: DataTypes.STRING,
       },

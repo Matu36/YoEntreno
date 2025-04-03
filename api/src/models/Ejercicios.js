@@ -16,6 +16,7 @@ module.exports = (sequelize) => {
       idFaseEntrenamiento: { type: DataTypes.INTEGER, allowNull: true },
       idDificultad: { type: DataTypes.INTEGER, allowNull: true },
       idTipoGrupoMuscular: { type: DataTypes.INTEGER, allowNull: true },
+      idEjerciciosTipoMaterial: { type: DataTypes.INTEGER, allowNull: true },
     },
     { timestamps: false }
   );

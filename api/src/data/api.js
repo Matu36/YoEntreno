@@ -1,3 +1,51 @@
+const EjercicioTipoMaterial = [
+  { id: 1, material: "Mancuernas" },
+  { id: 2, material: "Bandas elásticas" },
+  { id: 3, material: "Barras" },
+  { id: 4, material: "Pesas rusas" },
+  { id: 5, material: "Balón medicinal" },
+  { id: 6, material: "Poleas" },
+  { id: 7, material: "Máquinas" },
+  { id: 8, material: "Propio cuerpo" },
+];
+
+// faseEntrenamiento 1: entrada en calor
+// faseEntrenamiento 2: parte central
+// faseEntrenamiento 3: vuelta a la calma
+
+//tipo muscular //
+// 1: Pequeños
+// 2: Grandes
+
+//Categoria//
+// GRUPO 1: dinamicos
+// GRUPO 2: core
+// GRUPO 3: pectoral
+// GRUPO 4: espalda
+// GRUPO 5: piernas
+// GRUPO 6: hombros
+// GRUPO 7: biceps
+// GRUPO 8: triceps
+
+//Dificultad//
+/* 
+1 Inicial
+2 Medio
+3 Avanzada
+ */
+
+//EjercicioTipoMaterial//
+/* 
+1 Mancuernas
+2 Bandas elásticas
+3 Barras 
+4 Pesas rusas
+5 Balón medicinal
+6 Poleas
+7 Máquinas
+8 Propio Cuerpo
+*/
+
 const ejercicios = [
   {
     Id: 1,
@@ -9,6 +57,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 1,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 2,
@@ -20,6 +69,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 6,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 3,
@@ -31,6 +81,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 4,
@@ -42,6 +93,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 5,
@@ -53,6 +105,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 3,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 6,
@@ -64,6 +117,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 4,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 7,
@@ -75,6 +129,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 6,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 3,
   },
   {
     Id: 8,
@@ -86,6 +141,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 7,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 9,
@@ -97,6 +153,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 8,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 10,
@@ -108,6 +165,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 11,
@@ -119,6 +177,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 1,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 12,
@@ -130,6 +189,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 13,
@@ -141,6 +201,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 1,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 14,
@@ -152,6 +213,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 15,
@@ -163,6 +225,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 4,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 16,
@@ -174,6 +237,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 7,
   },
   {
     Id: 17,
@@ -185,6 +249,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 7,
   },
   {
     Id: 18,
@@ -196,6 +261,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 3,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 7,
   },
   {
     Id: 19,
@@ -207,6 +273,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 6,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 20,
@@ -218,6 +285,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 8,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 21,
@@ -229,6 +297,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 3,
   },
   {
     Id: 22,
@@ -240,6 +309,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 1,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 23,
@@ -251,6 +321,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 3,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 24,
@@ -262,6 +333,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 1,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 25,
@@ -273,6 +345,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 26,
@@ -285,6 +358,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 1,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 27,
@@ -296,6 +370,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 28,
@@ -308,6 +383,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 5,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 3,
   },
   {
     Id: 29,
@@ -319,6 +395,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 30,
@@ -330,6 +407,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 31,
@@ -341,6 +419,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 8,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 32,
@@ -352,6 +431,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 33,
@@ -363,6 +443,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 34,
@@ -374,6 +455,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 3,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 3,
   },
   {
     Id: 35,
@@ -385,6 +467,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 36,
@@ -396,6 +479,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 4,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 37,
@@ -407,6 +491,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 3,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 38,
@@ -418,6 +503,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 39,
@@ -429,6 +515,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 1,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 40,
@@ -440,6 +527,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 41,
@@ -451,6 +539,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 3,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 42,
@@ -462,6 +551,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 5,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 6,
   },
   {
     Id: 43,
@@ -473,6 +563,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 6,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 44,
@@ -484,6 +575,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 45,
@@ -495,6 +587,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 46,
@@ -506,6 +599,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 7,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 47,
@@ -517,6 +611,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 48,
@@ -528,6 +623,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 49,
@@ -540,6 +636,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 6,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 50,
@@ -551,6 +648,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 5,
   },
   {
     Id: 51,
@@ -562,17 +660,18 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 3,
   },
   {
     Id: 52,
-    Nombre: "Burpee con salto",
-    Descripcion: "Burpees con salto para mejorar fuerza y resistencia.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZrVNojvlfHM&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908054442%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=UE1hFl9GOo7hcLeI03FOpz8AcBwvxHsgxB%2BkgVhU9A8%3D&reserved=0",
+    Nombre: "Rodillas al Pecho",
+    Descripcion: "Saltos en el lugar elevando las rodillas al pecho.",
+    Video: "https://www.youtube.com/watch?v=Uamr4M1WfQg",
     idFaseEntrenamiento: 1,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 1,
-    idDificultad: 2,
+    idTipoGrupoMuscular: 1,
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1,
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
   },
   {
     Id: 53,
@@ -584,6 +683,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 54,
@@ -595,28 +695,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 4,
     idDificultad: 1,
-  },
-  {
-    Id: 55,
-    Nombre: "Jumping Jacks",
-    Descripcion: "Ejercicio cardiovascular para mejorar la resistencia.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3Dc4D1jw1u-2Y&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908078869%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=huYJiXDAIW2iXlOlApqixAg0xUZ%2BVRpvEubUhzzEiQc%3D&reserved=0",
-    idFaseEntrenamiento: 1,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 1,
-    idDificultad: 1,
-  },
-  {
-    Id: 56,
-    Nombre: "Fondos de triceps",
-    Descripcion: "Ejercicio para trabajar los triceps en banco o silla.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D6kALZikXxLc&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908087011%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=gmhg25uBcHi13Xj3Jan66wlI5ly5VrIqvJocdLT7nLM%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 1,
-    idCategoria: 8,
-    idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 57,
@@ -628,19 +707,9 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
-  {
-    Id: 58,
-    Nombre: "Elevaciones de piernas",
-    Descripcion:
-      "Ejercicio abdominal para fortalecer la parte inferior del abdomen.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DLRtHz9eV7Yw&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908102996%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=5X0hxExkvjjLEQgF9AiVE%2FbyIhnMLTD05MmP1vj8PFI%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 1,
-    idCategoria: 2,
-    idDificultad: 1,
-  },
+
   {
     Id: 59,
     Nombre: "Círculos con los brazos",
@@ -651,6 +720,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 6,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 60,
@@ -662,6 +732,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 61,
@@ -673,6 +744,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 8,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 62,
@@ -684,6 +756,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 6,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 63,
@@ -696,6 +769,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 3,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 64,
@@ -707,6 +781,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 65,
@@ -718,18 +793,9 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 5,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 1,
   },
-  {
-    Id: 66,
-    Nombre: "Plancha lateral",
-    Descripcion: "Ejercicio para trabajar los oblicuos y el core.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DPBWyjymRUaA&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908166579%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=7xJiFq66KCOBPqfJrVesKM556duVkIBp%2FTQ9UMfNhDI%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 1,
-    idCategoria: 2,
-    idDificultad: 2,
-  },
+
   {
     Id: 67,
     Nombre: "Sentadillas con salto en caja",
@@ -741,6 +807,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 68,
@@ -752,18 +819,9 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 7,
   },
-  {
-    Id: 69,
-    Nombre: "Dominadas",
-    Descripcion: "Ejercicio avanzado para trabajar la espalda y bíceps.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DHRfNzADbVdo&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908191540%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=TK3Fs1273asKIDz3MMQSZB41hyRXWt5cATfsx%2FyeAqY%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 4,
-    idDificultad: 3,
-  },
+
   {
     Id: 70,
     Nombre: "Fondos en paralelas",
@@ -774,6 +832,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 8,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 71,
@@ -785,6 +844,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 6,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 3,
   },
   {
     Id: 72,
@@ -796,41 +856,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 6,
     idDificultad: 1,
-  },
-  {
-    Id: 73,
-    Nombre: "Escaladores",
-    Descripcion: "Ejercicio cardiovascular que trabaja el core y las piernas.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D8v8UqA62XDo&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908234685%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=qmrjZOxk1KRJ7zvzCWbE0eAnkYFBqZiIsCuGVJrRAaI%3D&reserved=0",
-    idFaseEntrenamiento: 1,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 1,
-    idDificultad: 2,
-  },
-  {
-    Id: 74,
-    Nombre: "Hip Thrust con barra",
-    Descripcion:
-      "Ejercicio para trabajar glúteos y parte posterior de las piernas.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DX36go-KxM68&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908242864%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=XuOhIT2dqiJLKcr0dAdjvMfNddH%2BZG9AZpFyS2ksN3I%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 5,
-    idDificultad: 2,
-  },
-  {
-    Id: 75,
-    Nombre: "Sentadilla búlgaras",
-    Descripcion:
-      "Sentadilla de una sola pierna para trabajar cuadriceps y glúteos.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DqdM4FvNOsQU&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908250969%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=SMMVClVgvJHxcMhZShJyxINqj7ELCrcQmOzM9GAykl8%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 5,
-    idDificultad: 2,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 76,
@@ -842,6 +868,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 77,
@@ -854,29 +881,9 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 1,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 8,
   },
-  {
-    Id: 78,
-    Nombre: "Plancha con toque de hombro",
-    Descripcion: "Ejercicio para trabajar el core y los hombros.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DhhmN2drI9wM&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908275076%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=p%2BqlxxybFpwn87cwCAzIKD9Ez9MkD4e4beFYJW%2Bx9C0%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 1,
-    idCategoria: 2,
-    idDificultad: 2,
-  },
-  {
-    Id: 79,
-    Nombre: "Elevaciones de piernas en barra",
-    Descripcion: "Ejercicio para trabajar los abdominales inferiores.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DYmT3CSn_I3Y&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908283092%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=hy2owcd5rgL%2FbchT7Pc0xRiBAV3yKzn7t980kVEqOQM%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 1,
-    idCategoria: 2,
-    idDificultad: 2,
-  },
+
   {
     Id: 80,
     Nombre: "Remo con barra",
@@ -887,6 +894,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 4,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 3,
   },
   {
     Id: 81,
@@ -898,6 +906,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 7,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 3,
   },
   {
     Id: 82,
@@ -909,6 +918,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 83,
@@ -920,6 +930,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 7,
   },
   {
     Id: 84,
@@ -931,6 +942,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 7,
   },
   {
     Id: 85,
@@ -943,6 +955,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 86,
@@ -954,6 +967,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 87,
@@ -965,6 +979,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 88,
@@ -977,6 +992,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 2,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 89,
@@ -988,6 +1004,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 4,
   },
   {
     Id: 90,
@@ -1000,6 +1017,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8,
   },
   {
     Id: 91,
@@ -1012,6 +1030,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 8,
     idDificultad: 2,
+    idEjercicioTipoMaterial: 6,
   },
   {
     Id: 92,
@@ -1024,6 +1043,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 6,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 1,
   },
   {
     Id: 93,
@@ -1036,6 +1056,7 @@ const ejercicios = [
     idTipoGrupoMuscular: 2,
     idCategoria: 5,
     idDificultad: 3,
+    idEjercicioTipoMaterial: 3,
   },
   {
     Id: 94,
@@ -1047,75 +1068,546 @@ const ejercicios = [
     idTipoGrupoMuscular: 1,
     idCategoria: 6,
     idDificultad: 1,
+    idEjercicioTipoMaterial: 1,
   },
+
+  // DINAMICOS //
+
   {
     Id: 95,
-    Nombre: "Flexiones de triceps",
-    Descripcion: "Flexiones en banco para trabajar los triceps.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DEvkEM9J7yfY&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908415780%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=wGcYrkyNr34rbccbVM5SqDX%2FktbYXs4vc3Ms8IUNqj8%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 1,
-    idCategoria: 8,
+    Nombre: "Skaters",
+    Descripcion: "Saltos laterales simulando el movimiento de un patinador.",
+    Video: "https://www.youtube.com/watch?v=0JUlZMV0v14",
+    idFaseEntrenamiento: 1,
+    idTipoGrupoMuscular: 2,
+    idCategoria: 1, // Dinámicos
     idDificultad: 2,
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
   },
   {
     Id: 96,
-    Nombre: "Saltos con cuerda",
+    Nombre: "Salto de cuerda",
     Descripcion:
-      "Ejercicio cardiovascular para trabajar coordinación y resistencia.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DlK7u3FgE__A&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908423503%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=Y2l%2BHH9s%2BBdK7tu3M3ViPERJecc%2BSvnjo6TeNQEDgQg%3D&reserved=0",
-    idFaseEntrenamiento: 1,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 1,
-    idDificultad: 2,
+      "Ejercicio de cardio que mejora la coordinación y resistencia.",
+    Video: "https://www.youtube.com/watch?v=1BZMbtWIy3s",
+    idFaseEntrenamiento: 1, // Entrada en calor
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
   },
   {
     Id: 97,
-    Nombre: "Crunch bicicleta",
-    Descripcion: "Ejercicio abdominal para trabajar los músculos oblicuos.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DZpQyZpwyZXk&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908431364%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=R8%2BCqUnUtwfFOAmFRRQXi8kLbMJJZzQsbXBM57%2FKZ3I%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 1,
-    idCategoria: 2,
-    idDificultad: 2,
+    Nombre: "Skipping Alto",
+    Descripcion:
+      "Correr en el lugar elevando las rodillas lo más alto posible.",
+    Video: "https://www.youtube.com/watch?v=_VwO0W3G3mk",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
   },
   {
     Id: 98,
-    Nombre: "Sprints",
+    Nombre: "Salto en caja",
     Descripcion:
-      "Ejercicio cardiovascular que trabaja la explosividad y la resistencia.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DGz-DWUgPFG8&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908439312%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=DNPE53ufUO%2BPLEstS%2Fl5FhilWlKMFVD%2Fo%2BIUtF%2FE0uU%3D&reserved=0",
-    idFaseEntrenamiento: 1,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 1,
-    idDificultad: 3,
+      "Ejercicio pliométrico que fortalece las piernas y la potencia.",
+    Video: "https://www.youtube.com/watch?v=52r_UzUPn1Q",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
   },
   {
     Id: 99,
-    Nombre: "Press banca",
-    Descripcion:
-      "Ejercicio de pecho con barra, fundamental para desarrollar el pectoral.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DgRVjAtPip0Y&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908447158%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=svt%2FWKOvL%2FqHpEokoprTs3HDtcJgOULEfs6yPK94PzY%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 3,
-    idDificultad: 2,
+    Nombre: "Tijeras Laterales",
+    Descripcion: "Saltos alternando las piernas hacia los lados.",
+    Video: "https://www.youtube.com/watch?v=O_olXr-E1XA",
+    idFaseEntrenamiento: 1, // Entrada en calor
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
   },
   {
     Id: 100,
-    Nombre: "Pull-ups",
-    Descripcion: "Ejercicio avanzado para trabajar la espalda y bíceps.",
-    Video:
-      "https://na01.safelinks.protection.outlook.com/?url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DHRfNzADbVdo&data=05%7C02%7C%7C730c4f9ce7ea400d951908dd718dc56e%7C84df9e7fe9f640afb435aaaaaaaaaaaa%7C1%7C0%7C638791575908455052%7CUnknown%7CTWFpbGZsb3d8eyJFbXB0eU1hcGkiOnRydWUsIlYiOiIwLjAuMDAwMCIsIlAiOiJXaW4zMiIsIkFOIjoiTWFpbCIsIldUIjoyfQ%3D%3D%7C0%7C%7C%7C&sdata=2qzuWEhq1iqaGGvo23GwgTXPItnF6z4rvrud3i0o69k%3D&reserved=0",
-    idFaseEntrenamiento: 2,
-    idTipoGrupoMuscular: 2,
-    idCategoria: 4,
-    idDificultad: 3,
+    Nombre: "Salto en Sentadilla",
+    Descripcion:
+      "Ejercicio de potencia donde se realiza una sentadilla seguida de un salto.",
+    Video: "https://www.youtube.com/watch?v=1oed-UmAxFs",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
+  },
+
+  {
+    Id: 101,
+    Nombre: "Skipping alto",
+    Descripcion:
+      "Ejercicio cardiovascular que mejora la coordinación y resistencia.",
+    Video: "https://www.youtube.com/watch?v=DeTBwEL4m7s",
+    idFaseEntrenamiento: 1, // Entrada en calor
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
+  },
+  {
+    Id: 102,
+    Nombre: "Patadas de glúteo",
+    Descripcion:
+      "Ejercicio de activación para piernas y resistencia cardiovascular.",
+    Video: "https://www.youtube.com/watch?v=PtERxupmYpc",
+    idFaseEntrenamiento: 1, // Entrada en calor
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
+  },
+  {
+    Id: 103,
+    Nombre: "Saltos con giro",
+    Descripcion:
+      "Ejercicio pliométrico que trabaja coordinación y explosividad.",
+    Video: "https://www.youtube.com/watch?v=MXmPVJZwhvM",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
+  },
+  {
+    Id: 104,
+    Nombre: "Zancadas dinámicas",
+    Descripcion: "Ejercicio para fortalecer piernas con desplazamiento.",
+    Video: "https://www.youtube.com/watch?v=DgUGVxhvxrA",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
+  },
+  {
+    Id: 105,
+    Nombre: "Saltos en caja",
+    Descripcion: "Ejercicio pliométrico para mejorar potencia y explosividad.",
+    Video: "https://www.youtube.com/watch?v=52r_UlDDvwY",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
+  },
+  {
+    Id: 107,
+    Nombre: "Vitalizaciones con disco",
+    Descripcion: "Ejercicio de movilidad y activación muscular con disco.",
+    Video: "https://www.youtube.com/watch?v=3p4jWYSuXEM",
+    idFaseEntrenamiento: 1, // Entrada en calor
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 3, // Barras / Discos
+  },
+  {
+    Id: 108,
+    Nombre: "Saltos laterales con balón medicinal",
+    Descripcion: "Ejercicio pliométrico para mejorar agilidad y fuerza.",
+    Video: "https://www.youtube.com/watch?v=6J-lShEvdzs",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 5, // Balón medicinal
+  },
+  {
+    Id: 109,
+    Nombre: "Carrera con resistencia elástica",
+    Descripcion: "Ejercicio de potencia con bandas elásticas para velocidad.",
+    Video: "https://www.youtube.com/watch?v=O_9QINg3w2g",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 110,
+    Nombre: "Swing con pesa rusa",
+    Descripcion: "Ejercicio de potencia y coordinación con pesas rusas.",
+    Video: "https://www.youtube.com/watch?v=YSxHifyI6s0",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 111,
+    Nombre: "Burpees con salto a banco",
+    Descripcion:
+      "Variante de burpees con mayor dificultad y trabajo explosivo.",
+    Video: "https://www.youtube.com/watch?v=ZLNGDywMkuE",
+    idFaseEntrenamiento: 3, // Vuelta a la calma
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 8, // Propio Cuerpo
+  },
+  {
+    Id: 112,
+    Nombre: "Zancadas con Press de Hombros",
+    Descripcion: "Ejercicio combinado que trabaja piernas y hombros.",
+    Video: "https://www.youtube.com/watch?v=lJ3Q3-Wo6Wc",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 1, // Mancuernas
+  },
+  {
+    Id: 113,
+    Nombre: "Sentadilla con Curl de Bíceps",
+    Descripcion: "Ejercicio funcional que combina fuerza en piernas y brazos.",
+    Video: "https://www.youtube.com/watch?v=EddBw1BCmHE",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 1, // Mancuernas
+  },
+  {
+    Id: 114,
+    Nombre: "Estocadas Laterales con Mancuernas",
+    Descripcion: "Ejercicio para piernas y glúteos con carga adicional.",
+    Video: "https://www.youtube.com/watch?v=NNbOExh26bo",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 1, // Mancuernas
+  },
+  {
+    Id: 115,
+    Nombre: "Peso Muerto con Remo",
+    Descripcion: "Ejercicio para espalda y femorales con movimiento compuesto.",
+    Video: "https://www.youtube.com/watch?v=ZZZyDukl2vo",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 1, // Mancuernas
+  },
+  {
+    Id: 116,
+    Nombre: "Press de Hombros Alternado con Sentadilla",
+    Descripcion: "Ejercicio de fuerza y coordinación con mancuernas.",
+    Video: "https://www.youtube.com/watch?v=VtXhXn8c4yE",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 1, // Mancuernas
+  },
+
+  {
+    Id: 117,
+    Nombre: "Sentadilla con Press de Hombros con Bandas",
+    Descripcion:
+      "Ejercicio que combina sentadillas y press de hombros con bandas.",
+    Video: "https://www.youtube.com/watch?v=fz7J4zVmFME",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 118,
+    Nombre: "Zancadas con Remo con Bandas",
+    Descripcion: "Ejercicio que trabaja piernas y espalda al mismo tiempo.",
+    Video: "https://www.youtube.com/watch?v=T_yB7RRm2CU",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 119,
+    Nombre: "Puente de Glúteos con Resistencia de Banda",
+    Descripcion:
+      "Ejercicio enfocado en glúteos y femorales con banda elástica.",
+    Video: "https://www.youtube.com/watch?v=8zEZGlfDxd8",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 120,
+    Nombre: "Press de Pecho con Bandas",
+    Descripcion:
+      "Ejercicio que simula el press de banca usando bandas de resistencia.",
+    Video: "https://www.youtube.com/watch?v=PAWD7TVfB_o",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 121,
+    Nombre: "Elevaciones Laterales con Bandas",
+    Descripcion:
+      "Ejercicio para fortalecer los deltoides con bandas de resistencia.",
+    Video: "https://www.youtube.com/watch?v=cYjmUbP2xms",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 122,
+    Nombre: "Patada de Glúteo con Bandas",
+    Descripcion:
+      "Ejercicio para fortalecer los glúteos con resistencia controlada.",
+    Video: "https://www.youtube.com/watch?v=UY40H02pCCM",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 123,
+    Nombre: "Remo al Pecho con Bandas",
+    Descripcion:
+      "Ejercicio para fortalecer la espalda, imitando un remo con resistencia.",
+    Video: "https://www.youtube.com/watch?v=sdv7QT_MrPY",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 124,
+    Nombre: "Curl de Bíceps con Bandas",
+    Descripcion:
+      "Ejercicio clásico de bíceps usando bandas elásticas como resistencia.",
+    Video: "https://www.youtube.com/watch?v=K0mwYhHm4jY",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 125,
+    Nombre: "Press de Hombros con Bandas",
+    Descripcion: "Ejercicio que trabaja hombros, simulando un press militar.",
+    Video: "https://www.youtube.com/watch?v=9NkgYSo1qf4",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 126,
+    Nombre: "Aperturas de Pecho con Bandas",
+    Descripcion:
+      "Ejercicio para fortalecer el pectoral con resistencia progresiva.",
+    Video: "https://www.youtube.com/watch?v=ljRxLGUXNaQ",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 127,
+    Nombre: "Sentadillas con Bandas",
+    Descripcion: "Ejercicio para fortalecer piernas y glúteos con resistencia.",
+    Video: "https://www.youtube.com/watch?v=dWcVmZP6qk4",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 128,
+    Nombre: "Extensión de Tríceps con Bandas",
+    Descripcion:
+      "Ejercicio para aislar y fortalecer los tríceps con resistencia progresiva.",
+    Video: "https://www.youtube.com/watch?v=3k8zzH1vML8",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 129,
+    Nombre: "Zancadas Laterales con Bandas",
+    Descripcion: "Ejercicio que fortalece piernas y mejora la estabilidad.",
+    Video: "https://www.youtube.com/watch?v=0fIfPeUA4Rk",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 130,
+    Nombre: "Pallof Press con Bandas",
+    Descripcion:
+      "Ejercicio isométrico para fortalecer el core y mejorar la estabilidad.",
+    Video: "https://www.youtube.com/watch?v=ry3gH7kxbD4",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 131,
+    Nombre: "Face Pull con Bandas",
+    Descripcion:
+      "Ejercicio para fortalecer la parte posterior de los hombros y mejorar la postura.",
+    Video: "https://www.youtube.com/watch?v=rcXAZOcBr9k",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 2, // Bandas elásticas
+  },
+  {
+    Id: 137,
+    Nombre: "Kettlebell Swing",
+    Descripcion:
+      "Ejercicio explosivo para mejorar la potencia y la resistencia.",
+    Video: "https://www.youtube.com/watch?v=YSxHifyI4pU",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 138,
+    Nombre: "Goblet Squat con Pesa Rusa",
+    Descripcion: "Sentadilla profunda sosteniendo la pesa rusa al pecho.",
+    Video: "https://www.youtube.com/watch?v=MeIiIdhvXT4",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 139,
+    Nombre: "Press con Pesa Rusa a un Brazo",
+    Descripcion:
+      "Ejercicio unilateral para desarrollar fuerza y estabilidad en los hombros.",
+    Video: "https://www.youtube.com/watch?v=ZcdmJD2JDqE",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 140,
+    Nombre: "Deadlift con Pesa Rusa",
+    Descripcion:
+      "Ejercicio para fortalecer la parte baja de la espalda y los isquiotibiales.",
+    Video: "https://www.youtube.com/watch?v=UsQNGHjK3L8",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 141,
+    Nombre: "Snatch con Pesa Rusa",
+    Descripcion:
+      "Ejercicio avanzado para mejorar la potencia y la coordinación.",
+    Video: "https://www.youtube.com/watch?v=wgP9DO92I6g",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 142,
+    Nombre: "Péndulo con Pesa Rusa",
+    Descripcion:
+      "Balanceo controlado de la pesa rusa entre las piernas para trabajar estabilidad y coordinación.",
+    Video: "https://www.youtube.com/watch?v=X5Kj7tG9U9s",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 143,
+    Nombre: "Lunges con Pesa Rusa",
+    Descripcion:
+      "Desplantes dinámicos sosteniendo una pesa rusa para fortalecer piernas y core.",
+    Video: "https://www.youtube.com/watch?v=7SR-bLZxjlo",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 2, // Medio
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 144,
+    Nombre: "Halo con Pesa Rusa",
+    Descripcion:
+      "Movimiento circular alrededor de la cabeza para fortalecer hombros y core.",
+    Video: "https://www.youtube.com/watch?v=NmSRfBfNl-w",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 1, // Pequeños
+    idCategoria: 1, // Dinámicos
+    idDificultad: 1, // Inicial
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 145,
+    Nombre: "High Pull con Pesa Rusa",
+    Descripcion:
+      "Levantamiento explosivo de la pesa rusa para trabajar espalda y trapecios.",
+    Video: "https://www.youtube.com/watch?v=2UplVKoFHPk",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 4, // Pesas rusas
+  },
+  {
+    Id: 146,
+    Nombre: "Turkish Get Up con Pesa Rusa",
+    Descripcion:
+      "Movimiento completo para desarrollar estabilidad y fuerza funcional.",
+    Video: "https://www.youtube.com/watch?v=0bWRPC49-KI",
+    idFaseEntrenamiento: 2, // Parte central
+    idTipoGrupoMuscular: 2, // Grandes
+    idCategoria: 1, // Dinámicos
+    idDificultad: 3, // Avanzado
+    idEjercicioTipoMaterial: 4, // Pesas rusas
   },
 ];
 
@@ -1298,7 +1790,17 @@ const dificultades = [
   },
 ];
 
-const SeriesCircuitodefuerzaadaptativa = [];
+const Intensidad = [
+  { id: 1, tipo: "baja", Intensidad: "50%" },
+  { id: 2, tipo: "media", Intensidad: "70%" },
+  { id: 3, tipo: "alta", Intensidad: "80 a 100%" },
+];
+
+const NivelProgresionRutinas = [
+  { id: 1, nivel: "Inicial" },
+  { id: 2, nivel: "Media" },
+  { id: 3, nivel: "Avanzada" },
+];
 
 module.exports = {
   EjercicioCategoriaApi,
@@ -1308,4 +1810,7 @@ module.exports = {
   objetivosEntrenamiento,
   metodosEntrenamiento,
   dificultades,
+  EjercicioTipoMaterial,
+  Intensidad,
+  NivelProgresionRutinas,
 };
